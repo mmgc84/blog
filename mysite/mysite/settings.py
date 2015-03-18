@@ -59,7 +59,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
-+DATABASES = {'default': dj_database_url.config(
+DATABASES = {'default': dj_database_url.config(
     default='sqlite:////'+os.path.join(BASE_DIR, 'db.sqlite3'))}
 
 # Internationalization
