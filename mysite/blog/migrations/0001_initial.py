@@ -16,6 +16,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('comment_author', models.CharField(max_length=20)),
                 ('comment_text', models.TextField()),
+                ('comment_pub_date', models.DateTimeField()),
             ],
             options={
             },
@@ -27,7 +28,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('post_title', models.CharField(max_length=200)),
                 ('post_text', models.TextField()),
-                ('pub_date', models.DateTimeField(verbose_name=b'date_published')),
+                ('pub_date', models.DateTimeField(verbose_name=b'date published')),
             ],
             options={
             },
