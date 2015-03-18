@@ -11,8 +11,12 @@ class CommentInline(admin.StackedInline):
 
 class PostAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Posts', {'fields': ['post_title', 'post_text', 'pub_date']}),
+        ('Posts', {'fields': [
+            'post_author', 'post_title', 'post_text', 'pub_date']}),
     ]
     inlines = [CommentInline]
+    list_display = ('post_author', 'post_title', 'post_text', 'pub_date')
+    list_filter = ['post_author']
+    search_fields = ['post_title', 'post_author']
 
 admin.site.register(Post, PostAdmin)
