@@ -7,3 +7,6 @@
 # Django stuff:
 *.log
 *.pot
+
+# Sqlite DB
+*.sqlite3
