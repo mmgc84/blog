@@ -17,5 +17,5 @@ class Comment(models.Model):
     comment_author = models.CharField(max_length=20)
     comment_text = models.TextField()
 
-    def _unicode_(self):
+    def __unicode__(self):
         return self.comment_text
