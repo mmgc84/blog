@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 
 from blog.models import Post
@@ -6,7 +5,9 @@ from blog.models import Post
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello, world. You're at the blog index.")
+    latest_post_list = Post.objects.order_by('-pub_date')[:5]
+    context = {'latest_post_list': latest_post_list}
+    return render(request, 'blog/index.html', context)
 
 
 def detail(request, post_id):
