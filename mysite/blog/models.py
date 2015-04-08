@@ -1,4 +1,5 @@
 from django.db import models
+from hvad.models import TranslatableModel, TranslatedFields
 
 # Create your models here.
 
@@ -21,3 +22,11 @@ class Comment(models.Model):
 
     def __unicode__(self):
         return self.comment_text
+
+
+class Autor(TranslatableModel):
+    name = models.CharField(max_length=25)
+
+    translations = TranslatedFields(
+        libro = models.CharField(max_length=25),
+    )

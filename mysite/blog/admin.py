@@ -1,6 +1,6 @@
 from django.contrib import admin
-
-from blog.models import Post, Comment
+from hvad.admin import TranslatableAdmin
+from blog.models import Post, Comment, Autor
 
 
 # Register your models here.
@@ -19,4 +19,10 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ['post_author']
     search_fields = ['post_title', 'post_author']
 
+
+class AutorAdmin(TranslatableAdmin):
+    list_display = ['name']
+
+
 admin.site.register(Post, PostAdmin)
+admin.site.register(Autor, AutorAdmin)
